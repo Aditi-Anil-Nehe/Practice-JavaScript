@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignment-3</title>
+</head>
+<body>
+
+<h2>Assignment 3: Users Above 18</h2>
+
+<button onclick="filterUsers()">Show Users</button>
+
+<pre id="output"></pre>
+
+<script>
+  const users = [
+    { name: "Aditi", age: 18 },
+    { name: "Payal", age: 21 },
+    { name: "Bhakti", age: 19 },
+    { name: "Shraddha", age: 22}
+  ];
+
+  function filterUsers() {
+    const result = users.filter(user => user.age > 18);
+    document.getElementById("output").textContent = JSON.stringify(result, null, 2);
+  }
+</script>
+
+</body>
+</html>
