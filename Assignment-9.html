@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignment-9</title>
+</head>
+<body>
+  <h2>Assignment 9: Display Tasks</h2>
+  <div id="output"></div>
+
+  <script>
+    function delayRandom() {
+      const time = Math.random() * (2000 - 500) + 500;
+      return new Promise(resolve => setTimeout(resolve, time));
+    }
+
+    function print(message) {
+      const outputDiv = document.getElementById('output');
+      const p = document.createElement('p');
+      p.textContent = message;
+      outputDiv.appendChild(p);
+    }
+
+    async function taskA() {
+      await delayRandom();
+      print("Task A completed");
+    }
+
+    async function taskB() {
+      await delayRandom();
+      print("Task B completed");
+    }
+
+    async function taskC() {
+      await delayRandom();
+      print("Task C completed");
+    }
+
+    async function runTasks() {
+      await taskA();
+      await taskB();
+      await taskC();
+      print("All tasks completed");
+    }
+
+    runTasks();
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignment-7</title>
+</head>
+<body>
+
+  <h2>Assignment 7:Debounce</h2>
+  <input type="text" id="search" placeholder="Type to search..." />
+
+  <script>
+    function debounce(func, delay) {
+      let timeoutId;
+      return function () {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(func, delay);
+      };
+    }
+
+    const searchInput = document.getElementById("search");
+
+    searchInput.addEventListener("input", debounce(() => {
+      console.log("Search triggered!");
+    }, 300));
+  </script>
+
+</body>
+</html>
