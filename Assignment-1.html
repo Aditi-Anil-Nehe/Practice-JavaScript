@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-1</title>
+</head>
+<body>
+    <h2>Assignment 1: Reverse the words</h2>
+    <h3>Hello World From Wisdom Sprouts It TRaining Hub</h3>
+    <button onclick="Reverse()">Reverese words</button>
+    <p>Output : <span id="output"></span></p>
+   
+
+    <script>
+        function Reverse(){
+            const input="Hello World From Wisdom Sprouts It TRaining Hub"
+            const reversed = input
+           .split(" ")
+           .map(word => word.split("").reverse().join(""))
+           .join(" ");
+           
+            document.getElementById("output").textContent = reversed;
+        }
+
+    </script>
+</body>
+</html>
