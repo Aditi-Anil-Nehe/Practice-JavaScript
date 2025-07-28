@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignment-8</title>
+</head>
+<body>
+  <h2>Assignment 8:Copy Result</h2>
+  <button onclick="CopyResult()">GetResult</button>
+  <pre id="result"></pre>
+
+  <script>
+    function CopyResult(){
+    const original = {
+      name: "Aditi",
+      address: {
+        city: "Pune",
+        coordinates: {
+          lat: 40.7128,
+          lng: -74.006
+        }
+      }
+    };
+
+    const copy = JSON.parse(JSON.stringify(original));
+
+    
+    copy.address.city = "Ahilyanagar";
+
+    
+    document.getElementById("result").textContent =
+      "Original:\n" + JSON.stringify(original, null, 2) +
+      "\n\nCopy:\n" + JSON.stringify(copy, null, 2);
+}
+  </script>
+</body>
+</html>
