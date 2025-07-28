@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignment-4</title>
+</head>
+<body>
+
+<h2>Assignment 4: Ascending order based on price</h2>
+
+<button onclick="filterProducts()">Foods</button>
+
+<pre id="output"></pre>
+
+<script>
+    const foods = [
+       {name :"pizza", price: 200},
+       {name :"burger", price: 150},
+       {name :"Sandwich", price: 80},
+       {name :"French Fries", price: 120},   
+       {name :"Momos", price: 50}
+    ];
+
+    function filterProducts(){
+    foods.sort((a, b)=> a.price - b.price);
+    
+
+    document.getElementById("output").textContent = JSON.stringify(foods, null,2);
+    }
+
+</script>
+</body>
+</html>
