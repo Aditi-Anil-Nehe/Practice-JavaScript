@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-5</title>
+</head>
+
+<body>
+    <h2>Assignment 5: URL-friendly slug</h2>
+    <h4>Learn JavaScript in 30 Days!</h4>
+    <button onclick="convertIntoSlug()">Convert Slug</button>
+    <p>Output : <span id="output"></span></p>
+
+    <script>
+        function convertIntoSlug() {
+            const input = "Learn JavaScript in 30 Days!"
+            const slug = input
+                .toLowerCase()
+                .replace(/[!,@,#,$,%,^,&,*,(,),~,_,<,>,?,/]/g, '')
+                .replace(/\s+/g, '-')
+
+            document.getElementById("output").textContent = slug;
+        }
+
+    </script>
+
+</body>
+
+</html>
