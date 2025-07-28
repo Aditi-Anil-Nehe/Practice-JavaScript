@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-6</title>
+</head>
+
+<body>
+
+    <h2>Assignment 6: Group Them By Their Length</h2>
+    <button onclick="WordLength()">Create Group</button>
+    <pre id="output"></pre>
+
+    <script>
+        function WordLength() {
+
+            let words = ["apple", "cat", "table", "dog", "sun"]
+            let result = {};
+
+
+            for (let word of words) {
+                const len = word.length;
+                if (!result[len]) {
+                    result[len] = [];
+                }
+
+                result[len].push(word);
+            }
+
+            document.getElementById('output').textContent = JSON.stringify(result, null, 2);
+
+        }
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
