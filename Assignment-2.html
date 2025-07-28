@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignment-2</title>
+</head>
+<body>
+  <h2>Assignment 2: Word Frequency Counter</h2>
+
+  <textarea id="inputText" rows="5" cols="50">
+Learning JavaScript is fun! Fun and easy to learn JavaScript.
+  </textarea><br><br>
+
+  <button onclick="countWords()">Count Words</button>
+
+  <pre id="output" ></pre>
+
+  <script>
+    function countWords() {
+      let text = document.getElementById("inputText").value;
+      text = text.toLowerCase().replace(/[^\w\s]/g,"");
+      const words = text.split(/\s+/);
+      
+      const freq = {};
+
+      words.forEach(word => {
+        if (word) {
+          freq[word] = (freq[word] || 0) + 1;
+        }
+      });
+
+   
+      document.getElementById("output").textContent = JSON.stringify(freq, null, 2);
+    }
+  </script>
+</body>
+</html>
